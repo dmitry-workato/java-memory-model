@@ -1,0 +1,16 @@
+plugins {
+    id "io.github.reyerizo.gradle.jcstress" version "0.8.15"
+}
+
+repositories {
+    mavenCentral()
+}
+
+jcstress {
+    verbose = true
+    timeMillis = "1000"
+    iterations = 1
+    forks = 1
+    jvmArgs = "-server -XX:+UnlockDiagnosticVMOptions -XX:+StressLCM -XX:+StressGCM -XX:-EliminateLocks"
+}
+
